@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.role == 'ADMIN' || 
+         get(/databases/database/documents/users/$(request.auth.uid)).data.role == 'ADMIN');
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isOwner(userId) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Modules collection
+    match /modules/{moduleId} {
+      allow read: if true; // Publicly readable training syllabus
+      allow write: if isAdmin();
+    }
+
+    // Questions collection
+    match /questions/{questionId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Attempts collection: strictly read/write by owner or admin
+    match /attempts/{attemptId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    // Progress collection
+    match /progress/{progressId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create, update: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+
+    // Certificates: Public can read for verification; write only through server or admin
+    match /certificates/{certificateId} {
+      allow read: if true; // Public verification allowed
+      allow write: if isAdmin();
+    }
+
+    // AI Feedback
+    match /ai_feedback/{feedbackId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    // Admin Insights & Question Drafts
+    match /admin_insights/{insightId} {
+      allow read, write: if isAdmin();
+    }
+
+    match /ai_question_drafts/{draftId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile for trainees and administrators",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["TRAINEE", "ADMIN"] },
+        "preferredLanguage": { "type": "string", "enum": ["en", "hi"] },
+        "createdAt": { "type": "string" },
+        "lastLoginAt": { "type": "string" }
+      },
+      "required": ["uid", "name", "email", "role"]
+    },
+    "Module": {
+      "title": "Module",
+      "description": "Industrial safety training module",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "titleHindi": { "type": "string" },
+        "description": { "type": "string" },
+        "descriptionHindi": { "type": "string" },
+        "category": { "type": "string" },
+        "difficulty": { "type": "string", "enum": ["Beginner", "Intermediate", "Advanced"] },
+        "estimatedMinutes": { "type": "number" },
+        "thumbnail": { "type": "string" },
+        "arEnabled": { "type": "boolean" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "category", "published"]
+    },
+    "Question": {
+      "title": "Question",
+      "description": "Assessment question for module",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "moduleId": { "type": "string" },
+        "question": { "type": "string" },
+        "questionHindi": { "type": "string" },
+        "options": { "type": "array", "items": { "type": "string" } },
+        "optionsHindi": { "type": "array", "items": { "type": "string" } },
+        "correctAnswer": { "type": "number" },
+        "explanation": { "type": "string" },
+        "difficulty": { "type": "string" },
+        "topic": { "type": "string" },
+        "published": { "type": "boolean" }
+      },
+      "required": ["id", "moduleId", "question", "options", "correctAnswer"]
+    },
+    "Attempt": {
+      "title": "Attempt",
+      "description": "User test assessment submission",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "moduleId": { "type": "string" },
+        "score": { "type": "number" },
+        "correctAnswers": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "timeTaken": { "type": "number" },
+        "answers": { "type": "object" },
+        "completedAt": { "type": "string" },
+        "performanceLevel": { "type": "string" }
+      },
+      "required": ["id", "userId", "moduleId", "score"]
+    },
+    "Progress": {
+      "title": "Progress",
+      "description": "User completion and mastery progress",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "moduleId": { "type": "string" },
+        "progressPercentage": { "type": "number" },
+        "bestScore": { "type": "number" },
+        "attempts": { "type": "number" },
+        "completed": { "type": "boolean" },
+        "lastAccessedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "moduleId", "progressPercentage"]
+    },
+    "Certificate": {
+      "title": "Certificate",
+      "description": "Tamper-verifiable digital industrial safety certificate",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "certificateId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "moduleId": { "type": "string" },
+        "moduleName": { "type": "string" },
+        "score": { "type": "number" },
+        "issueDate": { "type": "string" },
+        "verificationCode": { "type": "string" },
+        "status": { "type": "string", "enum": ["VERIFIED", "REVOKED", "PENDING"] }
+      },
+      "required": ["certificateId", "userId", "userName", "moduleId", "score", "status"]
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}
