@@ -1,14 +1,87 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
-Run and deploy your AI Studio app
-This contains everything you need to run your app locally.
-View your app in AI Studio: https://ai.studio/apps/36d9989d-76ec-4f3c-9a5c-4fcbc0a41cba
-Run Locally
-Prerequisites:  Node.js
+🦺 MineSafe-AR
 
-Install dependencies:
-`npm install`
-Set the `GEMINI_API_KEY` in .env.local to your Gemini API key
-Run the app:
-`npm run dev`
+AR-Based Vocational Safety Training & Certification Platform 
+#AppHomePage.jpeg
+
+MineSafe-AR is a mobile Augmented Reality (AR) based safety training platform designed for workers in the mining, steel and mica industries of Jharkhand.
+The platform transforms traditional safety training into an interactive, practical and measurable learning experience using commonly available Android smartphones.
+
+🎯 Problem
+Traditional safety training often relies on static manuals and classroom sessions. This can result in poor retention and limited opportunities for workers to practice emergency procedures.
+Workers in remote industrial areas may also have limited access to expensive VR-based training systems and reliable internet connectivity.
+
+💡 Our Solution
+
+MineSafe-AR provides:
+
+📱 Smartphone-based AR safety training
+🔥 Fire & Explosion Response training
+☣️ Gas Leak & Confined Space training
+📝 Interactive assessments
+📊 Automatic score calculation
+📜 Digital safety certificates
+🔲 QR-based certificate verification
+🌐 Hindi and Santali localization
+📴 Offline training support
+🖥️ Web-based admin/compliance dashboard
+
+🚀 Key Features
+
+1. AR Safety Training
+Workers use their smartphone camera to interact with virtual safety scenarios overlaid on their real surroundings.
+2. Assessment Engine
+Workers complete quizzes and interactive tasks after each training module.
+3. Digital Certification
+Workers who successfully complete the assessment receive a digitally generated certificate with a unique QR code.
+4. QR Verification
+Supervisors can scan the QR code to verify the authenticity of a worker's certificate.
+5. Offline Functionality
+Training content and assessments can operate without continuous internet connectivity, with data synchronization when connectivity is restored.
+6. Multilingual Support
+The platform supports Hindi and Santali, improving accessibility for local workers.
+7. Admin Dashboard
+Safety officers and administrators can monitor:
+. Worker training status
+. Assessment scores
+. Certification status
+. Module completion
+. Compliance records
+
+🔄 SYSTEM WORKFLOW 
+
+Worker Login
+      ↓
+Select Language
+      ↓
+Select Safety Module
+      ↓
+AR Training
+      ↓
+Interactive Assessment
+      ↓
+Score Calculation
+      ↓
+   ┌──┴──┐
+   ↓     ↓
+ PASS   FAIL
+   ↓     ↓
+Certificate Retry
+   ↓
+QR Verification
+   ↓
+Admin Dashboard
+
+🚀 Future Scope
+🤖 AI-based personalized training recommendations.
+🥽 More realistic AR emergency simulations.
+🎙️ Voice-based training in regional languages.
+📊 Advanced analytics and performance tracking.
+🏭 Expansion to more industrial sectors.
+🔐 Secure and centralized digital certificate management. 
+
+🏁 Conclusion
+a) Provides interactive AR-based safety training.
+b) Supports Hindi and Santali localization.
+c) Enables interactive assessments and automatic scoring.
+d) Provides digital certificates with QR verification.
+e) Supports offline training for areas with limited connectivity.
