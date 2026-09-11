@@ -1,7 +1,7 @@
 🦺 MineSafe-AR
 
 AR-Based Vocational Safety Training & Certification Platform 
-#AppHomePage.jpeg
+AppHomePage.jpeg
 
 MineSafe-AR is a mobile Augmented Reality (AR) based safety training platform designed for workers in the mining, steel and mica industries of Jharkhand.
 The platform transforms traditional safety training into an interactive, practical and measurable learning experience using commonly available Android smartphones.
@@ -24,6 +24,7 @@ MineSafe-AR provides:
 🌐 Hindi and Santali localization
 📴 Offline training support
 🖥️ Web-based admin/compliance dashboard
+ARTrainingPage.jpeg
 
 🚀 Key Features
 
@@ -45,7 +46,7 @@ Safety officers and administrators can monitor:
 . Assessment scores
 . Certification status
 . Module completion
-. Compliance records
+. Compliance records SafetyModulePage.jpeg
 
 🔄 SYSTEM WORKFLOW 
 
