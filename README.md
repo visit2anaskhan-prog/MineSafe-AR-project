@@ -1,16 +1,17 @@
-🦺 MineSafe-AR
+# 🦺MineSafe-AR
 
 AR-Based Vocational Safety Training & Certification Platform 
-AppHomePage.jpeg
+### Home Page 
+![App Home Page](App%20Home%20Page.jpeg)
 
 MineSafe-AR is a mobile Augmented Reality (AR) based safety training platform designed for workers in the mining, steel and mica industries of Jharkhand.
 The platform transforms traditional safety training into an interactive, practical and measurable learning experience using commonly available Android smartphones.
 
-🎯 Problem
+## 🎯 Problem
 Traditional safety training often relies on static manuals and classroom sessions. This can result in poor retention and limited opportunities for workers to practice emergency procedures.
 Workers in remote industrial areas may also have limited access to expensive VR-based training systems and reliable internet connectivity.
 
-💡 Our Solution
+## 💡 Our Solution
 
 MineSafe-AR provides:
 
@@ -24,9 +25,10 @@ MineSafe-AR provides:
 🌐 Hindi and Santali localization
 📴 Offline training support
 🖥️ Web-based admin/compliance dashboard
-ARTrainingPage.jpeg
+### 🥽 AR Training Page
+![AR Training Page](AR%20Training%20Page.jpeg)
 
-🚀 Key Features
+## 🚀 Key Features
 
 1. AR Safety Training
 Workers use their smartphone camera to interact with virtual safety scenarios overlaid on their real surroundings.
@@ -46,9 +48,11 @@ Safety officers and administrators can monitor:
 . Assessment scores
 . Certification status
 . Module completion
-. Compliance records SafetyModulePage.jpeg
+. Compliance records
+### 🛡️ Safety Module Page
+![Safety Module Page](Safety%20Module%20Page.jpeg)
 
-🔄 SYSTEM WORKFLOW 
+### 🔄 System Workflow
 
 Worker Login
       ↓
@@ -72,7 +76,7 @@ QR Verification
    ↓
 Admin Dashboard
 
-🚀 Future Scope
+## 🚀 Future Scope
 🤖 AI-based personalized training recommendations.
 🥽 More realistic AR emergency simulations.
 🎙️ Voice-based training in regional languages.
@@ -80,7 +84,7 @@ Admin Dashboard
 🏭 Expansion to more industrial sectors.
 🔐 Secure and centralized digital certificate management. 
 
-🏁 Conclusion
+## 🏁 Conclusion
 a) Provides interactive AR-based safety training.
 b) Supports Hindi and Santali localization.
 c) Enables interactive assessments and automatic scoring.
